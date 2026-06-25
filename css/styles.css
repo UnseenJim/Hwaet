@@ -1,0 +1,936 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Broadsheet;
+  line-height: 1.6;
+  background: #2f2f38;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  margin: 0; /* Ensure no browser default margins */
+  padding: 0;
+}
+
+body.clownlab {
+  font-family: "Amboy-black", sans-serif;
+  font-weight: 100;  
+}
+
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #0077cc;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #222;
+  color: #d6d0b5;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0.4em;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+
+h1 {
+  font-family: "Broadsheet",
+  font-weight: 500;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.5em;
+  color: #d6d0b5;
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 1),
+    0 0 14px rgba(0, 0, 0, 0.8),
+    0 0 28px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(0, 0, 0, 0.3);
+  }
+
+
+h2 {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: #dab400;
+}
+
+h3 {
+  font-family: "Broadsheet",
+  font-weight: 500;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.5em;
+  color: #d6d0b5;
+}
+
+.social-icons {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons img:hover {
+  filter: invert(64%) sepia(94%) saturate(150%) hue-rotate(8deg) brightness(50%) contrast(90%);
+  transform: scale(1.1);
+}
+
+.podcast-links {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.podcast-links h3 {
+  color: #dab400;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  margin-bottom: 1em;  
+}
+
+.podcast-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  position: relative;
+  margin-bottom: 2em; 
+}
+
+.podcast-icons a {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: inline-block;
+}
+
+.podcast-icons svg {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(80%) brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Brand hover colours */
+.podcast-icons a[data-platform="Spotify"]:hover svg { filter: none; }
+.podcast-icons a[data-platform="Apple Podcasts"]:hover svg { filter: none; }
+.podcast-icons a[data-platform="Pocket Casts"]:hover svg { filter: none; }
+.podcast-icons a[data-platform="Overcast"]:hover svg { filter: none; }
+.podcast-icons a[data-platform="Amazon Music"]:hover svg { filter: none; }
+.podcast-icons a[data-platform="Google Podcasts"]:hover svg { filter: none; }
+.podcast-icons a[data-platform="RSS Feed"]:hover svg { filter: none; }
+
+/* Label that appears on hover */
+.podcast-icons a::after {
+  content: attr(data-platform);
+  position: absolute;
+  bottom: -1.8em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #d6d0b5;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.podcast-icons a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(4px);
+}
+
+.podcast-icons a:hover svg {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1);
+}
+
+.site-footer {
+  width: 100%;
+  background-color: #000;
+  color: #d6d0b5;
+  text-align: center;
+  padding: 2em 1em;
+  margin-top: 3em;
+  width: 100%;
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+/* Episode cards */
+.episode-card {
+  margin-bottom: 3em;
+  padding: 1.5em;
+  background-color: #000;       /* black background */
+  color: #d6d0b5;                 
+  border-left: 4px solid #900000; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  text-align: centre;
+}
+
+/* Titles inside episode cards */
+.episode-card h2 {
+  margin-top: 0;
+  color: #900000; /* red stays */
+}
+
+/* Buttons inside episode cards */
+.episode-card .button {
+  background-color: #d6d0b5;
+  color: #000;
+  border: 1px solid #d6d0b5;
+  font-weight: bold;
+}
+
+.episode-card .button:hover {
+  background-color: #ccc;
+  color: #000;
+  border-color: #ccc;
+}
+
+/* === Gallery === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+
+}
+
+.gallery-item {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(218, 180, 0, 0.6); /* mustard glow */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.caption {
+  margin: 0;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  color: #d6d0b5; /* your lighter text colour */
+  background-color: #000;
+  text-align: center;
+}
+
+/* === Lightbox === */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-y: auto; /* allow scroll on smaller screens */
+  box-sizing: border-box;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.lightbox-caption {
+  color: #d6d0b5;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  color: #d6d0b5;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lightbox .close:hover {
+  color: #d01111;
+}
+
+/* === Mobile adjustments === */
+@media (max-width: 700px) {
+  .lightbox {
+    padding: 1rem;           /* remove excess padding */
+    justify-content: flex-start;
+  }
+
+  .lightbox-img {
+    width: 100vw;            /* let image fill width */
+    height: auto;            /* preserve aspect ratio */
+    max-width: 100vw;
+    max-height: none;
+    border-radius: 0;
+  }
+
+  .lightbox-caption {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Lightbox navigation arrows */
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: #d6d0b5;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  color: #d01111;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox .prev { left: 1rem; }
+.lightbox .next { right: 1rem; }
+
+@media (max-width: 700px) {
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 2.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* For static, non-interactive gallery items */
+.gallery-item-static {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: none;
+}
+.gallery-item {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item-static:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item-static img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.text-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.text-image .text {
+  flex: 2;
+}
+
+.text-image .image {
+  flex: 1;
+}
+
+.text-image img {
+  width: 100%;
+  max-height: 200px;
+  max-width: 300px;
+  object-fit: cover;  
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+/* Alternate layout for reversed sections */
+.text-image.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 800px) {
+  .text-image {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-image.reverse {
+    flex-direction: column;
+  }
+
+  .text-image .text,
+  .text-image .image {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+/* === Hover overlay link for images === */
+.hover-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hover-link img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.hover-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(218,180,0,0.3) 0%, rgba(0,0,0,0.7) 80%);
+  opacity: 0;
+  transition: opacity 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.hover-link h1 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dab400;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  font-variant: small-caps;
+  opacity: 0;
+  text-shadow: 0 0 20px rgba(0,0,0,0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(1.05);
+  text-align: center;
+  pointer-events: none;  /* prevents accidental blocking of link click */
+}
+
+.hover-link a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+/* Hover effect */
+.hover-link:hover img {
+  filter: brightness(60%);
+  transform: scale(1.05);
+}
+
+.hover-link:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 40px rgba(218,180,0,0.4);
+}
+
+.hover-link:hover h1 {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* optional: smoother smaller-screen text */
+@media (max-width: 700px) {
+  .hover-link h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+/* Embedded audio player */
+.episode-card iframe,
+.episode-card audio {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  max-width: 700px;   
+  height: 80px;       /* more compact */
+  border: none;
+}
+
+.home-link {
+  font-family: "Broadsheet",
+  font-weight: 600;
+  font-style: normal;
+  font-variant: small-caps;
+  text-indent: 0;           /* remove first-line indent */
+  letter-spacing: 0.3em;    /* reduce spacing so breaks look less jarring */
+  display: inline-block;    /* keeps it centered properly */
+  text-align: center;
+  font-size: 1.5rem;
+  color: #d6d0b5;
+  font-style: normal;
+  text-decoration: none; /* ✅ remove underline */
+}
+
+.home-link:hover {
+  color: #dab400; /* mustard accent */
+  text-decoration: none;
+}
+
+.dropdown-nav {
+  position: relative;
+}
+
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: inline-block;
+  color: #d6d0b5;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background: #111;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+}
+
+
+/* The dropdown menu itself */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;     /* align to right of nav container */
+  left: auto;   /* prevent it stretching left */
+  background: #000;
+  border-top: 1px solid #333;
+  z-index: 999;
+  min-width: 220px;   /* set a safe minimum width */
+  text-align: center;   /* keep text aligned neatly inside */
+}
+
+.nav-links li {
+  border-bottom: 1px solid #333;
+}
+
+.nav-links li:last-child {
+  border-bottom: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #d6d0b5;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background: #222;
+  color: #dab400;
+}
+
+/* Show menu when checkbox is checked */
+.nav-toggle:checked + .nav-toggle-label + .nav-links {
+  display: block;
+}
+
+
+
+.splash-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem; /* space between buttons */
+  margin: 2rem 0;
+}
+
+.splash-link {
+  display: inline-block;
+  min-width: 300px;   /* set equal width */
+  text-align: center; /* center text inside */
+  padding: 0.6em 0;   /* equal vertical padding */
+  background-color: #000;
+  color: #d6d0b5;
+  text-decoration: none;
+  border: 1px solid transparent; 
+  font-weight: bold;
+  letter-spacing: 0.3em;  
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.splash-link:hover {
+  background-color: #d6d0c4;
+  color: #B28000;
+  border: 1px solid #B28000;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .splash-nav {
+    flex-direction: column;
+    align-items: center; /* center the buttons */
+    gap: 1.5rem; /* reduce spacing when stacked */
+  }
+
+  .splash-link {
+    width: 80%;       /* buttons fill most of the screen width */
+    min-width: unset; /* remove fixed 250px requirement */
+  }
+}
+
+.splash-page main {
+  padding-top: 3em;
+  padding-bottom: 8em;
+}
+
+.splash-page .logo {
+  margin-top: 3em;
+}
+
+/* === Top Navigation === */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 1rem 2rem;
+  color: #fff;
+  position: relative;
+}
+
+.nav-left img {
+  max-height: 50px;
+  width: auto;
+}
+
+.nav-right {
+  display: flex;
+  gap: 2rem;
+}
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.nav-center h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #d6d0b5;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .top-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: static; /* remove absolute positioning context */
+  }
+
+  .nav-left img {
+    max-height: 80px; /* a bit bigger on mobile */
+  }
+
+  .nav-center {
+    position: static;      /* no absolute positioning */
+    transform: none;       /* no offset */
+    margin-top: 0.5rem;
+  }
+
+  .nav-center h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: #900;         /* dark red for active link */
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+
+
+
+.top-nav {
+  padding: 2rem 2rem;
+}
+
+
+/* Show menu when checkbox is checked */
+.nav-toggle:checked + .nav-toggle-label + .nav-links {
+  display: block;
+}
+
+
+
+.button .icon {
+  height: 2em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0em;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card-link {
+  display: block;
+  text-decoration: none;  /* remove underline */
+  color: inherit;         /* inherit text colour */
+  display: block;         /* makes whole link act like a block */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;             /* ensures both row and column spacing */
+}
+
+.project-card {
+  background-color: #111;        /* dark card background */
+  color: #d6d0b5;
+  padding: 1.5rem;
+  border-left: 4px solid #dab400; /* mustard yellow accent */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  height: 100%;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  color: #dab400; /* mustard */
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6),
+              0 0 12px rgba(218, 180, 0, 0.6); /* mustard glow */
+  border-left-color: #ffd633; /* brighter mustard */
+}
+
+.project-card p {
+  font-size: 0.95rem;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;  /* crops nicely to fill card */
+  border-radius: 6px;
+}
+
+.project-bigimage {
+  width: 100%;
+  object-fit: cover;  /* crops nicely to fill card */
+  border-radius: 6px;
+}
+
+.simple-card {
+  background-color: #111;        /* dark background */
+  color: #d6d0b5;
+  padding: 1.5rem;
+  border-left: 4px solid #dab400; /* mustard accent */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-align: centre;
+  transition: none;              /* no hover effect */
+}
+
+.simple-card h2 {
+  margin-top: 0;
+  color: #dab400;
+}
+
+.simple-card p {
+  font-size: 0.95rem;
+}
+
+/* === Hover image reveal for .simple-card === */
+.simple-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #111;
+  color: #d6d0b5;
+  padding: 1.5rem;
+  border-left: 4px solid #dab400;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* invisible background layer */
+.simple-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--card-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: brightness(40%) blur(1px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 0;
+}
+
+/* keep text above the background image */
+.simple-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* reveal only when the button is hovered (not whole card) */
+.simple-card:has(.button:hover)::before {
+  opacity: 0.8;           /* faint reveal */
+  transform: scale(1.05);
+}
+
+
+
+/* optional: small lift on hover */
+.simple-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5),
+              0 0 12px rgba(218,180,0,0.3);
+}
+
+
+/* Links inside body text */
+.content-wrapper a {
+  color: #dab400;          /* mustard yellow (or another accent) */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.content-wrapper a:hover {
+  color: #fff;             /* or lighten to make hover obvious */
+  text-decoration: none;
+}
+
+.clownlab ul {
+  list-style: none;
+  padding: 0;
+}
+
+.clownlab ul li {
+  background: #111;
+  margin: 0.5em 0;
+  padding: 0.6em 1em;
+  border-left: 4px solid #dab400;
+  border-radius: 4px;
+}
+
