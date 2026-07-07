@@ -178,11 +178,11 @@ section {
 
   .hwaet-brand {
     gap: 3rem;
-    padding: 2rem 1rem 2.5rem;
+    padding: 4rem 1rem 3rem;
   }
 
   .hwaet-logo {
-    width: 65px;
+    width: 120px;
   }
 
   .hwaet-wordmark {
@@ -196,6 +196,7 @@ section {
   .hwaet-hero img {
     height: 38vh;
     min-height: 240px;
+    width: auto;
   }
 
   .hwaet-intro {
