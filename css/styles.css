@@ -97,6 +97,53 @@ section {
   font-size: 1.35rem;
 }
 
+/* === Projects === */
+
+.hwaet-projects {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+  border-top: 1px solid rgba(255,255,255,0.22);
+}
+
+.hwaet-section-title {
+  margin: 0 0 2.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hwaet-project {
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+
+.hwaet-project:last-child {
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+
+.hwaet-project h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+}
+
+.hwaet-project-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  color: #bfb8a6;
+}
+
+.hwaet-project-description {
+  max-width: 620px;
+  margin: 0.8rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
 /* === Bios === */
 
 .hwaet-bios {
@@ -215,5 +262,21 @@ section {
 
   .hwaet-contact {
     padding: 2rem 1.25rem 3rem;
+  }
+
+  .hwaet-projects {
+    padding: 3rem 1.25rem;
+  }
+
+  .hwaet-section-title {
+    margin-bottom: 2rem;
+  }
+
+  .hwaet-project {
+    padding: 1.2rem 0;
+  }
+
+  .hwaet-project h3 {
+    font-size: 1.3rem;
   }
 }
