@@ -302,6 +302,22 @@ font-size: clamp(3rem, 7vw, 5.5rem);
     0 2px 3px rgba(0, 0, 0, 0.8);
 }
 
+.hwaet-project-header h1.earthburn-title {
+  font-family: "carta-marina", sans-serif;
+font-weight: 700;
+font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+
+  color: #7f1717;
+
+  text-shadow:
+    0 -1px 0 rgba(255, 180, 160, 0.10),
+    0 1px 0 #350606,
+    0 2px 3px rgba(0, 0, 0, 0.8);
+}
+
+
 .hwaet-project-header .hwaet-project-meta {
   margin-top: 0.8rem;
 }
