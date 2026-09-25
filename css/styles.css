@@ -287,6 +287,21 @@ section {
   letter-spacing: 0.02em;
 }
 
+.hwaet-project-header h1.drag-me-title {
+  font-family: "masonic-lodge", sans-serif;
+font-weight: 400;
+font-style: normal;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  letter-spacing: 0;
+
+  color: #7f1717;
+
+  text-shadow:
+    0 1px 0 #3d0808,
+    0 2px 2px rgba(0, 0, 0, 0.75);
+}
+
+
 .hwaet-project-header .hwaet-project-meta {
   margin-top: 0.8rem;
 }
