@@ -30,6 +30,17 @@ section {
   margin: 0;
 }
 
+/* === Links === */
+
+a {
+  color: #c65a4a;
+  text-decoration-color: rgba(198, 90, 74, 0.55);
+}
+
+a:hover {
+  color: #dc7465;
+  text-decoration-color: #dc7465;
+}
 
 /* === Header === */
 
